@@ -1,0 +1,72 @@
+# macOS system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Go specific
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+*.prof
+*.cgo1.go
+*.cgo2.c
+_cgo_*
+_obj
+_test
+_testmain.go
+
+# Build and binary directories
+bin/
+build/
+dist/
+vendor/
+
+# Debug files
+debug
+*.debug
+debug.test
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+*~
+
+# Environment files
+.env
+.env.local
+*.env.local
+
+# Log files
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Dependencies
+/vendor/
+/Godeps/
+
+# Test coverage
+coverage.txt
+coverage.html
+*.cover
+*.out
+
+# Project specific
+assets/*.mp3
+!assets/stone.mp3
+!assets/background.mp3 
