@@ -2,7 +2,7 @@
 
 A modern implementation of Gomoku (Five in a Row) game with an intelligent AI opponent, built using Go and the Fyne GUI toolkit.
 
-![Gomoku Game Screenshot]
+![Gomoku Game Screenshot](assets/screenshot1.png)
 
 ## Game Features
 

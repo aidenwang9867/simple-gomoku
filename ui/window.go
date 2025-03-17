@@ -243,8 +243,11 @@ func (gw *GameWindow) handleClick(row, col int) {
 		gw.updateLastMoveMarker(row, col)
 		gw.updateStatus()
 
-		// Play system sound
-		go playSystemSound()
+		// Play system sound in background after a tiny delay to ensure UI update
+		go func() {
+			time.Sleep(10 * time.Millisecond)
+			playSystemSound()
+		}()
 
 		if gw.board.IsGameFinished() {
 			gw.showGameOver("Black")
@@ -259,7 +262,6 @@ func (gw *GameWindow) handleClick(row, col int) {
 			aiRow, aiCol := gw.ai.MakeMove(gw.board)
 			if aiRow >= 0 && aiCol >= 0 {
 				// Update UI in main thread
-				gw.window.Canvas().Content().Refresh()
 				gw.board.PlaceStone(aiRow, aiCol)
 
 				// AI stone animation
@@ -269,8 +271,11 @@ func (gw *GameWindow) handleClick(row, col int) {
 				gw.updateLastMoveMarker(aiRow, aiCol)
 				gw.updateStatus()
 
-				// Play system sound
-				go playSystemSound()
+				// Play system sound in background after a tiny delay to ensure UI update
+				go func() {
+					time.Sleep(10 * time.Millisecond)
+					playSystemSound()
+				}()
 
 				if gw.board.IsGameFinished() {
 					gw.showGameOver("White")
